@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block body %}
-<div class="container" style="display: flex;  justify-content: center; justify-items: center; ">
+<div class="flex" >
         {% for item in dados_hotel %}
-        <div class="card" style="width: 30rem; margin: 30px; text-align: center; padding: 20px;">
+        <div class="card" style="width: 30rem; margin: 30px; text-align: center; padding: 20px; display: flex;  justify-content: center; justify-items: center; color: #fff ;background-color: rgba(29, 27, 27, 0.7);">
           <h1 class="title">Cacique Hotel's</h1>
           <img src="{{item.logo.url}}" alt="quarto">
           <div class="card-body">
