@@ -5,3 +5,4 @@ class formNome(forms.Form):
     sobrenome = forms.CharField(label='Sobrenome', max_length=100)
     email = forms.EmailField(label='Email', max_length=100)
     telefone = forms.CharField(label='Telefone', max_length=100)
+    senha = forms.CharField(label='Senha', max_length=20, widget=forms.PasswordInput)

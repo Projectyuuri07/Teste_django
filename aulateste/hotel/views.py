@@ -24,12 +24,18 @@ def nome(request):
             var_sobrenome = form.cleaned_data["sobrenome"]
             var_email = form.cleaned_data["email"]
             var_telefone = form.cleaned_data["telefone"]
-
-            print(var_nome, var_sobrenome, var_email, var_telefone)
+            var_senha = form.cleaned_data["senha"]
 
             return HttpResponse("<h1>Deu Certo</h1>")
         
-        user = Usuario(nome=var_nome, sobrenome=var_sobrenome, email=var_email, telefone=var_telefone)
+        user = Usuario(nome=var_nome, sobrenome=var_sobrenome, email=var_email, telefone=var_telefone, senha=var_senha)
+        user.save()
+
+        print(var_nome)
+        print(var_sobrenome)
+        print(var_email)
+        print(var_telefone)
+        print(var_senha)
 
 
     else:

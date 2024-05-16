@@ -30,10 +30,10 @@ class quarto(models.Model):
         return self.tipo
     
 class Usuario(models.Model):
-    nome = models.CharField(max_length=100)
-    sobrenome = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
-    telefone = models.CharField(max_length=100)
+    nome = models.CharField(max_length=50)
+    sobrenome = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    telefone = models.CharField(max_length=50)
 
     def __str__(self):
         return self.nome
