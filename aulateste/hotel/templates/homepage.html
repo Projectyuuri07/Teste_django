@@ -2,17 +2,23 @@
 {% load static %}
 
 {% block title %}
-    Hotel Senai
+    Hotel Cacique - Home
 {% endblock %}
 
 {% block body %}
         {% for item in dados_hotel %}
-            <div class="card" style="width: 30rem; margin: 80px;">
-                <img src="{{item.logo.url}}" alt="quarto">
-                <div class="card-body">
-                  <p class="card-text">{{item.descricao}}</p>
-                </div>
-              </div>
+
+        <div class="card" style="width: 35rem; margin: 20px; text-align: center; padding: 20px;">
+          <h1 class="title">Cacique Hotel's</h1>
+          <img src="{{item.logo.url}}" alt="quarto">
+          <div class="card-body">
+            <p class="card-text">{{item.descricao}}</p>
+            <h5 class="subtitle">Seu conforto em primeiro lugar!</h5>
+            <a href="http://127.0.0.1:8000/quartos" class="btn btn-primary">Reserve</a>
+          </div>
+        </div>
+        
+
         {% endfor %}
 
 {% endblock %}
