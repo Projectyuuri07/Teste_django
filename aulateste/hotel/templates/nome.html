@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 
 {% block title %}
-    Cacique Hotel's - Reserva
+    Cacique Hotel's - NOME_TESTE_FORMS
 {% endblock %}
 
 {% block head %}
@@ -39,40 +39,34 @@
 {% endblock %}
 
 {% block body %}
-<div class="parallax">
-    <div class="container p-3">
-        <div class="row justify-content-center rounded-5">
-            <div class="col-lg-6">
-                <div class="bg-dark p-3 border">
-                    <h2 class="text-center text-white">Reserve</h2>
-                    <form action="nome" method="post ">
-                        {% csrf_token %}
-                        <div class="mb-2">
-                            <label for="nome">Nome:</label>
-                            {{ form.nome }}
-                        </div>
-                        <div class="mb-2">
-                            <label for="sobrenome">Sobrenome:</label>
-                            {{ form.sobrenome }}
-                        </div>
-                        <div class="mb-2">
-                            <label for="email">E-mail:</label>
-                            {{ form.email }} 
-                        </div>
-                        <div class="mb-2">
-                            <label for="telefone">Telefone:</label>
-                            {{ form.telefone }}
-                        </div>
-                        <div class="mb-2">
-                            <label for="senha">Senha:</label>
-                            {{ form.senha }}
-                        </div>
-                        <button type="submit">Submit</button>
-                    </form>
+    <div class="parallax">
+        <div class="container p-3">
+            <div class="row justify-content-center rounded-5">
+                <div class="col-lg-6">
+                    <div class="bg-dark p-3 border">
+                        <h2 class="text-center text-white">Nome</h2>
+                        <form action="nome" method="post ">
+                            {% csrf_token %}
+                            <div class="mb-2">
+                                <label for="nome">Nome:</label>
+                                {{ form.nome }}
+                            </div>
+                            
+                            <div class="mb-2">
+                                <label for="email">E-mail:</label>
+                                {{ form.email }} 
+                            </div>
+                        
+                            <div class="mb-2">
+                                <label for="senha">Senha:</label>
+                                {{ form.senha }}
+                            </div>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
 

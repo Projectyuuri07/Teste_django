@@ -2,42 +2,42 @@
 {% load static %}
 
 {% block title %}
-Reserve Já
+HOTEL - RESERVE JÁ
 {% endblock %}
 
 {% block body %}
-<div class="container-fluid p-0">
-    <div class="parallax justify-content-center align-items-center" style="height: 100vh;">
-        <div class="col-lg-10 col-md-12">
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="border: gray groove 5px;">
-                <div class="carousel-indicators">
-                    {% for item in dados_quarto %}
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="{% if forloop.first %}true{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
-                    {% endfor %}
-                </div>
-                <div class="carousel-inner">
-                    {% for item in dados_quarto %}
-                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                            <img src="{{ item.foto_quarto.url }}" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="{{ item.tipo }}">
-                            <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.4); color: #fff">
-                                <h5>{{ item.tipo }}</h5>
-                                <p>{{ item.descricao }}</p>
-                                <p>Disponibilidade: {{ item.disponibilidade }}</p>
-                                <p>Preço: R${{ item.valor }}</p>
+    <div class="container-fluid p-0">
+        <div class="parallax justify-content-center align-items-center" style="height: 100vh;">
+            <div class="col-lg-10 col-md-12">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="border: gray groove 5px;">
+                    <div class="carousel-indicators">
+                        {% for item in dados_quarto %}
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="{% if forloop.first %}true{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                        {% for item in dados_quarto %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <a href="http://127.0.0.1:8000/reserva"><img src="{{ item.foto_quarto.url }}" class="d-block w-100" style="height: 600px; object-fit: cover;" alt="{{ item.tipo }}"></a>
+                                <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.4); color: #fff">
+                                    <h5>{{ item.tipo }}</h5>
+                                    <p>{{ item.descricao }}</p>
+                                    <p>Disponibilidade: {{ item.disponibilidade }}</p>
+                                    <p>Preço: R${{ item.valor }}</p>
+                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

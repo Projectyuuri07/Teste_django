@@ -1,23 +1,22 @@
 {% extends 'index.html' %}
 
 {% block title %}
-    Cacique Hotel's - CADASTRO
+    HOTEL - RESERVA
 {% endblock %}
 
 {% block head %}
     <style>
-        body {
-            background-color: hsl(212, 17%, 57%);
-        }
-
         input[type="text"],
         input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        select {
             width: 100%;
             padding: 10px;
             margin-top: 6px;
             margin-bottom: 16px;
-            border: 1px solid #ccc;
+            border: 1px solid #7a7a7a;
             border-radius: 4px;
             box-sizing: border-box;
         }
@@ -26,48 +25,56 @@
             padding: 10px;
             border: none;
             border-radius: 4px;
-            background-color: #007bff;
             color: white;
+            background-color: #6c757d;
             cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #5a6268;
         }
         label {
             color: white;
             margin-bottom: 6px;
             display: block;
         }
+        .form-container {
+            background-color: #343a40;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 {% endblock %}
 
 {% block body %}
     <div class="parallax">
-        <div class="container p-3">
-            <div class="row justify-content-center rounded-5">
+        <div class="container">
+            <div class="row justify-content-center mt-5">
                 <div class="col-lg-6">
-                    <div class="bg-dark p-3 border">
-                        <h2 class="text-center text-white">Cadastre-se</h2>
-                        <form action="cadastro" method="post ">
+                    <div class="form-container">
+                        <h2 class="text-center text-white">Faça sua Reserva</h2>
+                        <form action="reserva" method="post">
                             {% csrf_token %}
                             <div class="mb-2">
-                                <label for="nome">Nome:</label>
-                                {{ form.first_name }}
-                            </div>
-                            <div class="mb-2">
-                                <label for="sobrenome">Sobrenome:</label>
-                                {{ form.last_name }}    
-                            </div>
-                            <div class="mb-2">
-                                <label for="User">User:</label>
+                                <label for="id_nome">Usuário:</label>
                                 {{ form.user }}
                             </div>
                             <div class="mb-2">
-                                <label for="email">E-mail:</label>
+                                <label for="id_email">E-mail:</label>
                                 {{ form.email }}
                             </div>
                             <div class="mb-2">
-                                <label for="password">password:</label>
-                                {{ form.password }}
+                                <label for="id_idade">Idade:</label>
+                                {{ form.idade }}
                             </div>
-                                
+                            <div class="mb-2">
+                                <label for="id_data">Data:</label>
+                                {{ form.data }}
+                            </div>
+                            <div class="mb-2">
+                                <label for="id_quarto">Quarto:</label>
+                                {{ form.quarto }}
+                            </div>
                             <button type="submit">Submit</button>
                         </form>
                     </div>
