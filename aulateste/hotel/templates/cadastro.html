@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 
 {% block title %}
-    Cacique Hotel's - Reserva
+    Cacique Hotel's - Cadastro
 {% endblock %}
 
 {% block head %}
@@ -44,29 +44,30 @@
         <div class="row justify-content-center rounded-5">
             <div class="col-lg-6">
                 <div class="bg-dark p-3 border">
-                    <h2 class="text-center text-white">Reserve</h2>
+                    <h2 class="text-center text-white">Cadastre-se</h2>
                     <form action="nome" method="post ">
                         {% csrf_token %}
                         <div class="mb-2">
                             <label for="nome">Nome:</label>
-                            {{ form.nome }}
+                            {{ form.first_name }}
                         </div>
                         <div class="mb-2">
                             <label for="sobrenome">Sobrenome:</label>
-                            {{ form.sobrenome }}
+                            {{ form.last_name }}    
+                        </div>
+                        <div class="mb-2">
+                            <label for="User">User:</label>
+                            {{ form.user }}
                         </div>
                         <div class="mb-2">
                             <label for="email">E-mail:</label>
-                            {{ form.email }} 
+                            {{ form.email }}
                         </div>
                         <div class="mb-2">
-                            <label for="telefone">Telefone:</label>
-                            {{ form.telefone }}
+                            <label for="password">password:</label>
+                            {{ form.password }}
                         </div>
-                        <div class="mb-2">
-                            <label for="senha">Senha:</label>
-                            {{ form.senha }}
-                        </div>
+                            
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -75,4 +76,3 @@
     </div>
 </div>
 {% endblock %}
-
